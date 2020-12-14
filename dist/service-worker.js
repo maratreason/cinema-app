@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.ffe9857049592080b1df0b684fd279a7.js"
+  "/precache-manifest.f37eb0315e709f444736024a24c91ebe.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "cinema"});
+workbox.core.setCacheNameDetails({prefix: "cinema-app-3"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {

@@ -1,8 +1,8 @@
 {
-    "name": "cinema-app",
-    "version": "1.0.0",
+    "name": "cinema-app-3",
+    "version": "0.1.0",
     "description": "Heroku App",
-    "author": "gearmobile",
+    "author": "",
     "private": true,
     "scripts": {
       "postinstall": "npm install express"
