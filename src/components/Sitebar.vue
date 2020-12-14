@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         updateFilmsList(id) {
-            this.$store.dispatch("fetchFilms", id);
+            this.$store.dispatch("fetchFilms", {id});
         }
     },
     computed: {

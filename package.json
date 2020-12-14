@@ -1,13 +1,15 @@
 {
-  "name": "cinema",
+  "name": "cinema-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
