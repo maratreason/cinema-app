@@ -38,5 +38,9 @@ export default {
             background-color: #1565c0;
         }
     }
+
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
 }
 </style>

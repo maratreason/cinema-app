@@ -20,6 +20,9 @@ export default new Vuex.Store({
         },
         loadGenres(state, payload) {
             state.genres = payload;
+        },
+        setFilms(state, payload) {
+            state.films = payload;
         }
     },
     actions: {
@@ -40,7 +43,14 @@ export default new Vuex.Store({
         },
         setCurrentGenre({ commit }, id) {
             commit("setGenre", id);
-        }
+        },
+        async searchFilms({ commit }, searchText) {
+            const res = await fetch(
+                `https://api.themoviedb.org/3/search/movie?api_key=4237669ebd35e8010beee2f55fd45546&query=${searchText}`
+            );
+            const result = await res.json();
+            commit("setFilms", result.results);
+        },
     },
     getters: {
         films: (st) => st.films,

@@ -6,7 +6,7 @@
                 <div class="col s3">
                     <Sitebar />
                 </div>
-                <div class="col s9">
+                <div class="col s12 m12 l9 lg9">
                     <router-view />
                 </div>
             </div>

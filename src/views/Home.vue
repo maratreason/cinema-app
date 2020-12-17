@@ -10,6 +10,13 @@
                 {{ button.title }}
             </button>
         </div>
+        <div class="col s12">
+            <div class="input-field">
+                <i class="material-icons prefix">search</i>
+                <input id="search" type="text" class="validate" v-model="search" @keyup.enter="searchCinema">
+                <label for="search">Search cinema</label>
+            </div>
+        </div>
         <div class="col s12 m6 l6 xl4" v-for="film in films" :key="film.original_title">
             <Card :film="film" />
         </div>
@@ -22,6 +29,11 @@ import Card from "@/components/Card";
 export default {
     components: {
         Card,
+    },
+    data() {
+        return {
+            search: ""
+        }
     },
     computed: {
         films() {
@@ -37,6 +49,9 @@ export default {
     methods: {
         setSorting(sortBy) {
             this.$store.dispatch("fetchFilms", {id: this.$route.params.id, sortBy});
+        },
+        searchCinema() {
+            this.$store.dispatch("searchFilms", this.search);
         }
     },
 };
