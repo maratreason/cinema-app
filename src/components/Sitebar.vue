@@ -36,6 +36,7 @@ export default {
         color: #1565c0;
         &.active {
             background-color: #1565c0;
+            color: #fff;
         }
     }
 
