@@ -60,5 +60,9 @@ export default {
 <style lang="scss" scoped>
 button {
     margin-right: 10px;
+
+    @media screen and (max-width: 556px) {
+        margin-bottom: 10px;
+    }
 }
 </style>
