@@ -28,7 +28,7 @@ export default new Vuex.Store({
     actions: {
         async fetchFilms({ commit }, {id=28, sortBy="popularity.desc"}) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/discover/movie?api_key=4237669ebd35e8010beee2f55fd45546&with_genres=${id}&sort_by=${sortBy}`
+                `https://api.themoviedb.org/3/discover/movie?api_key=4e999d34d86c060126d18c6c6a05aa5b&with_genres=${id}&sort_by=${sortBy}`
             );
             const films = await res.json();
 
