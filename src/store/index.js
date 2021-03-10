@@ -36,7 +36,7 @@ export default new Vuex.Store({
         },
         async fetchGenres({ commit }) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/genre/movie/list?api_key=4237669ebd35e8010beee2f55fd45546`
+                `https://api.themoviedb.org/3/genre/movie/list?api_key=4e999d34d86c060126d18c6c6a05aa5b`
             );
             const genres = await res.json();
             commit("loadGenres", genres.genres);
@@ -46,7 +46,7 @@ export default new Vuex.Store({
         },
         async searchFilms({ commit }, searchText) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/search/movie?api_key=4237669ebd35e8010beee2f55fd45546&query=${searchText}`
+                `https://api.themoviedb.org/3/search/movie?api_key=4e999d34d86c060126d18c6c6a05aa5b&query=${searchText}`
             );
             const result = await res.json();
             commit("setFilms", result.results);
