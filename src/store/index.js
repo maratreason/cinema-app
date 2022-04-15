@@ -3,6 +3,8 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+const api_key = "4e999d34d86c060126d18c6c6a05aa5b";
+
 export default new Vuex.Store({
     state: {
         films: [],
@@ -28,16 +30,18 @@ export default new Vuex.Store({
     actions: {
         async fetchFilms({ commit }, {id=28, sortBy="popularity.desc"}) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/discover/movie?api_key=4e999d34d86c060126d18c6c6a05aa5b&with_genres=${id}&sort_by=${sortBy}`
+                `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${id}&sort_by=${sortBy}`
             );
+            console.log("res", res)
             const films = await res.json();
 
             commit("loadFilms", films.results);
         },
         async fetchGenres({ commit }) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/genre/movie/list?api_key=4e999d34d86c060126d18c6c6a05aa5b`
+                `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`
             );
+            console.log("res", res)
             const genres = await res.json();
             commit("loadGenres", genres.genres);
         },
@@ -46,7 +50,7 @@ export default new Vuex.Store({
         },
         async searchFilms({ commit }, searchText) {
             const res = await fetch(
-                `https://api.themoviedb.org/3/search/movie?api_key=4e999d34d86c060126d18c6c6a05aa5b&query=${searchText}`
+                `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchText}`
             );
             const result = await res.json();
             commit("setFilms", result.results);
