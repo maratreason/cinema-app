@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const api_key = "4e999d34d86c060126d18c6c6a05aa5b";
+const api_key = "5f25842e6f31af00379cb3d4";
 
 export default new Vuex.Store({
     state: {
